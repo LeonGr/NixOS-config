@@ -48,6 +48,11 @@
     keyMap = "us";
   };
 
+  environment.etc = {
+    "bspwmrc".source = ./config/bspwm/bspwmrc;
+    "sxhkdrc".source = ./config/bspwm/sxhkdrc;
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -56,11 +61,13 @@
     windowManager = {
       bspwm = {
         enable = true;
-        configFile = "/home/leon/dotfiles/bspwm/bspwmrc";
-        sxhkd.configFile = "/home/leon/dotfiles/bspwm/sxhkdrc";
+        configFile = "/etc/bspwmrc";
+        sxhkd.configFile = "/etc/sxhkdrc";
       };
     };
   };
+
+  
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -97,6 +104,7 @@
     git
     rxvt-unicode
     neovim
+    ripgrep
     coreutils-full
     bat
     curl
@@ -109,7 +117,7 @@
     polybar
     picom
     rofi
-    xorg.xkill
+    psmisc
     neofetch
     #jetbrains.idea-community
   ];
