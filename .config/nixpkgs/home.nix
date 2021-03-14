@@ -8,6 +8,7 @@ in
         ./modules/git.nix
         ./modules/neovim.nix
         ./modules/zsh.nix
+        ./modules/polybar.nix
     ];
 
     xdg.enable = true;
