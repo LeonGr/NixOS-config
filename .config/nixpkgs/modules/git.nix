@@ -36,9 +36,6 @@
                     path = "nvim";
                 };
             };
-            #mergetool "vimdiff" = {
-                #path = "nvim";
-            #};
         };
     };
 }
