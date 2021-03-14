@@ -21,7 +21,7 @@
             start = "sudo systemctl start";
             restart = "sudo systemctl restart";
             sus = "systemctl suspend";
-            tmux = "TERM = xterm-256color tmux"; # make cursor work
+            tmux = "TERM=xterm-256color tmux"; # make cursor work
             mv = "mv -i"; # (--interactive) confirm overwrites
 
             # ls -> exa
@@ -43,6 +43,7 @@
 
         sessionVariables = rec {
             EDITOR = "nvim";
+            SUDO_EDITOR = "nvim";
         };
 
         initExtra = ''
