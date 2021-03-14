@@ -10,6 +10,7 @@ in
         ./modules/zsh.nix
         ./modules/polybar.nix
         ./modules/rofi.nix
+        ./modules/tmux.nix
         ./modules/zathura.nix
     ];
 
