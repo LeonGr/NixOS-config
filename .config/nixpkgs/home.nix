@@ -11,7 +11,7 @@ in
         ./modules/polybar.nix
         ./modules/rofi.nix
         ./modules/tmux.nix
-        ./modules/zathura.nix
+        ./modules/misc.nix
     ];
 
     xdg.enable = true;
@@ -25,6 +25,7 @@ in
 
     xdg.configFile = {
         "zathura/zathurarc".source = "${config.xdg.cacheHome}/wal/zathurarc";
+        "dunst/dunstrc".source = "${config.xdg.cacheHome}/wal/dunstrc";
     };
 
     home = {
@@ -39,9 +40,35 @@ in
             "${config.xdg.configHome}/wal/templates/zathurarc".source = ./config/wal_templates/zathurarc.template;
             "${config.xdg.configHome}/wal/templates/dunstrc".source = ./config/wal_templates/dunstrc.template;
         };
+
+        packages = with pkgs; [
+            duc
+            pywal
+            rxvt-unicode
+            spotify
+            spotify-tui
+            firefox
+            polybar
+            picom
+            rofi
+            pavucontrol
+            teams
+            discord
+            yarn
+            dunst
+            libnotify
+            neovim-nightly
+            nodePackages.vim-language-server
+        ];
     };
 
     programs.home-manager = {
         enable = true;
     };
+
+    nixpkgs.overlays = [
+        (import (builtins.fetchTarball {
+             url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+         }))
+    ];
 }

@@ -7,77 +7,6 @@
 set nocompatible " be iMproved, required
 "filetype off     " required
 
-" Vim-Plug
-" call plug#begin()
-" 
-" "Tweaks
-" Plug 'tpope/vim-surround'                                         " Wrap text easily
-" Plug 'mattn/emmet-vim'                                            " html autocomplete
-" Plug 'scrooloose/nerdtree'                                        " File browser in vim
-" Plug 'jistr/vim-nerdtree-tabs'                                    " Keep nerdtree open across tabs
-" Plug 'scrooloose/nerdcommenter'                                   " Easy commenting and uncommenting
-" Plug 'tpope/vim-obsession'                                        " Save vim sessions
-" Plug 'christoomey/vim-tmux-navigator'                             " Navigate tmux windows using hjkl
-" Plug 'unblevable/quick-scope'                                     " Higlight words when you press f or t
-" Plug 'chip/vim-fat-finger'                                        " Series of abbreviations for vim
-" Plug 'tpope/vim-repeat'                                           " Repeat more than one command
-" Plug 'godlygeek/tabular'                                          " Easy text align
-" Plug 'tpope/vim-endwise'                                          " Auto close stuff (e.g. function, if)
-" "Plug 'takac/vim-hardtime'                                         " Help me to stop using jjjj
-" Plug 'airblade/vim-gitgutter'                                     " Show git changes
-" Plug 'jiangmiao/auto-pairs'                                       " Auto pairs
-" Plug 'SirVer/ultisnips'                                           " Snippets engine
-" Plug 'honza/vim-snippets'                                         " Snippets themselves
-" Plug 'dense-analysis/ale'                                         " Async Lint Engine
-" Plug 'KabbAmine/vCoolor.vim'                                      " Colour picker (Alt-Z)
-" Plug 'yaroot/vissort'                                             " Sort by visual block
-" Plug 'junegunn/fzf.vim'                                           " Fuzzy finder
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'pangloss/vim-javascript'                                    " Javascript support
-" Plug 'ap/vim-css-color'                                           " Show css colors in files
-" Plug 'cakebaker/scss-syntax.vim'                                  " SCSS support
-" Plug 'nathanaelkane/vim-indent-guides'                            " Indentation guides
-" Plug 'keith/swift.vim'                                            " Swift syntax and indent styles
-" Plug 'posva/vim-vue'                                              " Vue syntax
-" Plug 'leafgarland/typescript-vim'                                 " TypeScript support
-" Plug 'peitalin/vim-jsx-typescript'                                " TypeScript with React support
-" Plug 'jalvesaq/nvim-r'                                            " R support
-" Plug 'chrisbra/csv.vim'                                           " Browse csv files
-" Plug 'neovimhaskell/haskell-vim'                                  " Better Haskell support
-" Plug 'pantharshit00/vim-prisma'                                   " Prisma 2 support
-" Plug 'jparise/vim-graphql'                                        " GraphQL support
-" "Plug 'kevinhwang91/nvim-bqf'
-" Plug 'LeonGr/neovim-expand-selection'                             " My own plugin
-" 
-" " neovim LSP plugins
-" Plug 'neovim/nvim-lspconfig'                                      " Collection of common configs for neovim LSP client
-"     Plug 'nvim-lua/lsp_extensions.nvim'                           " Extensions to built-in LSP, for example, providing type inlay hints
-"     Plug 'nvim-lua/completion-nvim'                               " Autocompletion framework for built-in LSP
-"     Plug 'nvim-lua/lsp-status.nvim'                               " Get information about the current language server
-"     Plug 'steelsojka/completion-buffers'                          " Buffer completion source
-" 
-" " TreeSitter
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" 
-" " Themes
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'chriskempson/vim-tomorrow-theme'
-" Plug 'flazz/vim-colorschemes'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'jdkanani/vim-material-theme'
-" Plug 'nanotech/jellybeans.vim'
-" "Plug 'morhetz/gruvbox' " already added by vim-colorschemes
-" Plug 'dkasak/gruvbox'   " Fork that fixes haskell highlight issues
-" Plug 'marcopaganini/termschool-vim-theme'
-" Plug 'godlygeek/csapprox'
-" Plug 'jacoborus/tender'
-" Plug 'endel/vim-github-colorscheme'
-" Plug 'larsbs/vimterial'
-" Plug 'bcicen/vim-vice'
-" Plug 'dylanaraps/wal.vim'
-" Plug 'chriskempson/base16-vim'
-" call plug#end()
-
 " Scrolling
 set mouse=a
 "set guicursor= " to disable guicursor
@@ -107,8 +36,8 @@ set inccommand=nosplit
 filetype plugin indent on
 
 " Color settings
-" syntax enable
-" syntax on
+syntax enable
+syntax on
 " "set t_Co=256
 " " let g:gruvbox_italic=1 " urxvt supports italics, enable it
 " colorscheme gruvbox
@@ -121,7 +50,7 @@ highlight LineNr guibg=NONE
 set laststatus=2
 
 " Statusline for when it is visible
-" set statusline=%{StatuslineGit()}\ \ %0.50F\ %=%l,%c\ \ %p%%\ %{StatusLineLsp()}\  " comment so we don't have trailing whitespace
+set statusline=%{StatuslineGit()}\ \ %0.50F\ %=%l,%c\ \ %p%%\ %{StatusLineLsp()}\  " comment so we don't have trailing whitespace
 highlight StatusLine   gui=none            " guibg=none
 highlight StatusLineNC gui=none cterm=bold " guibg=grey guifg=#000000
 
@@ -422,11 +351,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 " (require checks file in ~/.config/nvim/lua)
 " LSP settings
-" lua require('lsp')
+lua require('lsp')
 " TreeSitter settings
-" lua require('treesitter')
+lua require('treesitter')
 " Overwrite some functions
-" lua require('overwrite')
+lua require('overwrite')
 
 " LSP mappings
 " Jump to definition
