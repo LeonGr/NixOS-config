@@ -35,7 +35,7 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  
+
   fonts.fonts =  with pkgs; [
     dejavu_fonts
     nerdfonts
@@ -49,8 +49,8 @@
   };
 
   environment.etc = {
-    "bspwmrc".source = ./config/bspwm/bspwmrc;
-    "sxhkdrc".source = ./config/bspwm/sxhkdrc;
+    "bspwmrc".source = ./.config/bspwm/bspwmrc;
+    "sxhkdrc".source = ./.config/bspwm/sxhkdrc;
   };
 
   # Enable the X11 windowing system.
@@ -66,8 +66,6 @@
       };
     };
   };
-
-  
 
   # Configure keymap in X11
   services.xserver.layout = "us";
@@ -91,7 +89,6 @@
 
   users.defaultUserShell = pkgs.zsh;
 
-  nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -111,7 +108,7 @@
     htop
     exa
     rofi
-    spotify
+    #spotify
     spotify-tui
     firefox
     polybar
@@ -119,27 +116,15 @@
     rofi
     psmisc
     neofetch
+    xclip
+    parted
+    gparted
+    gnufdisk
+    bitwarden
+    bitwarden-cli
+    #home-manager
     #jetbrains.idea-community
   ];
-
-  programs.zsh = {
-    ohMyZsh = {
-	enable = true;
-	plugins = ["git" "z"];
-    };
-    enable = true;
-    enableCompletion = true;
-    #enableAutoSuggestions = true;
-    interactiveShellInit = ''
-	#source /home/leon/dotfiles/zsh/.zshrc
-	export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
-
-	ZSH_THEME="alanpeabody"
-
-	plugins=(git zsh zsh-autosuggestions)
-    '';
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
