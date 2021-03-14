@@ -10,6 +10,7 @@ in
         ./modules/zsh.nix
         ./modules/polybar.nix
         ./modules/rofi.nix
+        ./modules/zathura.nix
     ];
 
     xdg.enable = true;
@@ -19,6 +20,10 @@ in
     xdg.userDirs = {
         desktop = "\$HOME";
         documents = "\$HOME";
+    };
+
+    xdg.configFile = {
+        "zathura/zathurarc".source = "${config.xdg.cacheHome}/wal/zathurarc";
     };
 
     home = {
@@ -31,7 +36,7 @@ in
             # templates for pywal
             "${config.xdg.configHome}/wal/templates/colors-rofi.rasi".source = ./config/wal_templates/colors-rofi.template;
             "${config.xdg.configHome}/wal/templates/zathurarc".source = ./config/wal_templates/zathurarc.template;
-            "${config.xdg.configHome}/wal/templates/dunstrc".source = ./config/wal_templates/zathurarc.template;
+            "${config.xdg.configHome}/wal/templates/dunstrc".source = ./config/wal_templates/dunstrc.template;
         };
     };
 
