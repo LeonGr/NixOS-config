@@ -94,15 +94,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    fzf
     wget
     vim
-    pywal
     tmux
     oh-my-zsh
     zsh
     git
-    rxvt-unicode
-    neovim
+    #neovim
     ripgrep
     coreutils-full
     bat
@@ -110,28 +109,16 @@
     htop
     exa
     rofi
-    spotify
-    spotify-tui
-    firefox
-    polybar
-    picom
-    rofi
-    psmisc
+    psmisc #killall
     neofetch
     xclip
     parted
     gparted
     gnufdisk
-    bitwarden
-    bitwarden-cli
+    bitwarden bitwarden-cli
     playerctl
-    pavucontrol
-    teams
-    yarn
-    ghc
-    haskellPackages.haskell-language-server
+    ghc haskellPackages.haskell-language-server
     gcc gdb cmake llvm clang-tools clang
-    #home-manager
     #jetbrains.idea-community
   ];
   # Some programs need SUID wrappers, can be configured further or are
