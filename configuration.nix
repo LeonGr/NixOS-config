@@ -89,6 +89,8 @@
 
   users.defaultUserShell = pkgs.zsh;
 
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -108,7 +110,7 @@
     htop
     exa
     rofi
-    #spotify
+    spotify
     spotify-tui
     firefox
     polybar
@@ -122,6 +124,13 @@
     gnufdisk
     bitwarden
     bitwarden-cli
+    playerctl
+    pavucontrol
+    teams
+    yarn
+    ghc
+    haskellPackages.haskell-language-server
+    gcc gdb cmake llvm clang-tools clang
     #home-manager
     #jetbrains.idea-community
   ];
