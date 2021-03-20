@@ -7,14 +7,6 @@
 set nocompatible " be iMproved, required
 "filetype off     " required
 
-" Scrolling
-set mouse=a
-"set guicursor= " to disable guicursor
-" Blinking cursors and styles
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-		  \,i-ci-cr-ve-r:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-		  \,sm:block-blinkwait175-blinkoff150-blinkon175
-
 " Show commands as they're typed
 set showcmd
 
@@ -335,7 +327,7 @@ endfunction
 
 " Change color popup menu
 highlight Pmenu ctermbg=gray guibg=#202020 guifg=#FFFFFF
-highlight NormalFloat ctermbg=gray guibg=none
+highlight NormalFloat ctermbg=none guibg=none
 
 " Set completeopt to have a better completion experience (:help completeopt)
     " menuone: popup even when there's only one match
@@ -349,13 +341,13 @@ let g:UltiSnipsExpandTrigger       = "<c-s>"
 let g:UltiSnipsJumpForwardTrigger  = "<c-l>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-" (require checks file in ~/.config/nvim/lua)
-" LSP settings
-lua require('lsp')
-" TreeSitter settings
-lua require('treesitter')
-" Overwrite some functions
-lua require('overwrite')
+"" (require checks file in ~/.config/nvim/lua)
+"" LSP settings
+"lua require('lsp')
+"" TreeSitter settings
+"lua require('treesitter')
+"" Overwrite some functions
+"lua require('overwrite')
 
 " LSP mappings
 " Jump to definition

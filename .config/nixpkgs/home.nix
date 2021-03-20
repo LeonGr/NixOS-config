@@ -4,6 +4,7 @@ let
     homeDirectory = "/home/leon";
 in
 {
+
     imports = [
         ./modules/git.nix
         ./modules/neovim.nix
@@ -42,6 +43,7 @@ in
         };
 
         packages = with pkgs; [
+            fzf-zsh
             duc
             pywal
             rxvt-unicode
@@ -58,7 +60,13 @@ in
             dunst
             libnotify
             neovim-nightly
+            # language servers
+            rust-analyzer
+            python-language-server
             nodePackages.vim-language-server
+            nodePackages.vscode-json-languageserver-bin
+            nodePackages.typescript-language-server
+            nodePackages.bash-language-server
         ];
     };
 

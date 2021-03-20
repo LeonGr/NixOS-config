@@ -1,9 +1,32 @@
-{ inputs, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
+let
+  readFile = file: ext: builtins.readFile "${file}";
+  readLuaSection = file: wrapLuaConfig (readFile file "lua");
+
+  wrapLuaConfig = luaConfig: ''
+    lua<<EOF
+    ${luaConfig}
+    EOF
+  '';
+in
 {
   programs.neovim = {
     enable = true;
-    extraConfig = builtins.readFile ../config/init.vim;
+    extraConfig = builtins.readFile ../config/neovim/init.vim +
+    readLuaSection ../config/neovim/lua/lsp.lua +
+    readLuaSection ../config/neovim/lua/treesitter.lua +
+    readLuaSection ../config/neovim/lua/overwrite.lua;
+#      builtins.readFile ../config/neovim/init.vim +
+#      "\nlua <<EOF\n" +
+#      builtins.readFile ../config/neovim/lsp.lua +
+#      "EOF" +
+#      "\nlua <<EOF\n" +
+#      builtins.readFile ../config/neovim/treesitter.lua +
+#      "EOF" +
+#      "\nlua <<EOF\n" +
+#      builtins.readFile ../config/neovim/overwrite.lua +
+#      "EOF";
     plugins = with pkgs.vimPlugins; [
        surround
        emmet-vim
@@ -41,6 +64,7 @@
        #neovim-expand-selection
        vim-nix
        # lsp
+       nvim-treesitter
        nvim-lspconfig
        #lsp_extensions
        completion-nvim
