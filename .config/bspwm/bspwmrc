@@ -24,7 +24,7 @@ bspc config center_pseudo_tiled  true
 #bspc config presel_feedback_color "#d60808"
 
 wal -R &
-xrdb ${HOME}/dotfiles/xorg/.Xresources
+xrdb ${HOME}/.config/xorg/.Xresources
 #picom --config ${HOME}/dotfiles/others/picom.conf
 
 # source the colors.

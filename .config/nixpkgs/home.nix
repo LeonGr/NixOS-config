@@ -27,6 +27,7 @@ in
     xdg.configFile = {
         "zathura/zathurarc".source = "${config.xdg.cacheHome}/wal/zathurarc";
         "dunst/dunstrc".source = "${config.xdg.cacheHome}/wal/dunstrc";
+        "xorg/.Xresources".source = ./config/.Xresources;
     };
 
     home = {

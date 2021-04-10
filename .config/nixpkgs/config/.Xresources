@@ -1,0 +1,42 @@
+!Xft.dpi:                        163
+!Xft.dpi:                        92
+URxvt*termName:                 rxvt-256color
+URxvt*font: xft:DejaVu Sans Mono:size=16:antialias=true, xft:Inconsolata for Powerline:size=16, xft:TerminessTTF Nerd Font Mono:size=18, xft:DejaVu Sans Mono For Powerline:size=16
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+URxvt.internalBorder:           35
+URxvt.perl-ext-common:          default,clipboard,resize-font,matcher
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.clipboard.autocopy:       true
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline fg5
+
+! Colors
+*background:   bg
+*foreground:   fg
+*cursorColor:  grn
+
+*color0:      blk
+*color8:      bblk
+*color1:      red
+*color9:      red
+*color2:      grn
+*color10:     grn
+*color3:      ylw
+*color11:     ylw
+*color4:      blu
+*color12:     blu
+*color5:      mag
+*color13:     mag
+*color6:      cyn
+*color14:     ylw
+*color7:      wht
+*color15:     wht
